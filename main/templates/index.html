@@ -65,15 +65,17 @@
 		}
 	</style>
 	<div class="wrapper">
-		<div class="header"></div>
+		<div class="header"><h1>{{title}}</h1></div>
 		<div class="body">
 			<div class="left"></div>
 			<div class="main">
+			{% for tovar in tovars %}
 				<a href="#" class="item">
 					<img src="http://placehold.it/80x100" alt="">
 					<span class="title">Наш товар</span>
-					<span class="price">200 грн</span>
+					<span class="price">{{tovar}}</span>
 				</a>
+			{% endfor %}
 			</div>
 		</div>
 	</div>

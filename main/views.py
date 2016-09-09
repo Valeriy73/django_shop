@@ -5,7 +5,11 @@ from django.template.loader import render_to_string
 
 # Create your views here.
 def home(request):
+	tovars = []
+	for x in range(0, 3):
+		tovars.append(x)
 	context= {
-		'title': 'Helloworld'
+		'title': 'Helloworld',
+		'tovars': tovars,
 	}
-	return HttpResponseren(render_to_string('index.html', context))
+	return HttpResponse(render_to_string('index.html', context))
