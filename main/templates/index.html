@@ -48,6 +48,7 @@
 		}
 		.wrapper .body .main .item img{
 			display: block;
+			width: 80px;
 		}
 		.wrapper .body .main .item span{
 			
@@ -70,10 +71,10 @@
 			<div class="left"></div>
 			<div class="main">
 			{% for tovar in tovars %}
-				<a href="#" class="item">
-					<img src="http://placehold.it/80x100" alt="">
-					<span class="title">Наш товар</span>
-					<span class="price">{{tovar}}</span>
+				<a href="/item/{{tovar.alias}}/" class="item">
+					<img src="{{tovar.image}}" alt="">
+					<span class="title">{{tovar.name}}</span>
+					<span class="price">{{tovar.price}}</span>
 				</a>
 			{% endfor %}
 			</div>
