@@ -1,23 +1,24 @@
 from django.shortcuts import render
 from main.models import *
-from django.http import HttpResponse, HttpResponseRedirect, Http404
+from django.http import HttpResponse, HttpResponseRedirect
 from django.template.loader import render_to_string
 from django.core.exceptions import ObjectDoesNotExist
+from django.http import Http404
 
 # Create your views here.
 def home(request):
-	tovars = Item.objects.all()
+	category = Category.objects.all()
 	context= {
-		'title': 'Helloworld',
-		'tovars': tovars,
+		'sitename': 'Интернет-магазин',
+		'categories': category,
 	}
-	return HttpResponse(render_to_string('index.html', context))
+	return HttpResponse(render_to_string('home.html', context))
 
 def item(request, alias):
 	try:
 		tovar = Item.objects.get(alias=alias)
 	except:
-		return Http440
+		raise Http404('Объект не найден')
 	
 	
 	context= {
@@ -25,3 +26,18 @@ def item(request, alias):
 		'tovar': tovar,
 	}
 	return HttpResponse(render_to_string('item.html', context))
+
+def get_category(request, alias):
+	try:
+		category = Category.objects.get(alias=alias)
+		tovars = Item.objects.filter(category=category)
+	except:
+		raise Http404('Объект не найден')
+	
+	
+	context= {
+		
+		'tovars': tovars,
+		'category': category,
+	}
+	return HttpResponse(render_to_string('index.html', context))
