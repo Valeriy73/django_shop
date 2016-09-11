@@ -1,72 +1,12 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>Catalog</title>
+	<link rel="stylesheet" href="{% static "style.css" %}" type="text/css">
 </head>
 <body>
-	<style>
-		.wrapper{
-			width: 1000px;
-			margin: 0 auto;
-
-		}
-		.wrapper .header{
-			width: 100%;
-			height: 40px;
-			background: #eee;
-		}
-		.wrapper .body{
-			width: 100%;
-			min-height: 600px;
-			background: #ccc;
-		}
-		.wrapper .body .left{
-			width: 300px;
-			min-height: 600px;
-			background: yellow;
-			display: inline-block;
-			vertical-align: top;
-			float: left;
-		}
-		.wrapper .body .main{
-			width: 660px;
-			margin-left: 40px;
-			min-height: 600px;
-			background: green;
-			display: inline-block;
-			vertical-align: top;
-		}
-		.wrapper .body .main .item{
-			display: inline-block;
-			vertical-align: top;
-			margin: 10px;
-			background: red;
-			width: 80px;
-			min-height: 100px;
-			text-decoration: none; 
-		}
-		.wrapper .body .main .item img{
-			display: block;
-			width: 80px;
-			height: auto;
-			
-		}
-		.wrapper .body .main .item span{
-			
-			color: #fff;
-		}
-		.wrapper .body .main .item .title{
-			font-size: 14px;
-			display: block;
-			margin-top: 5px;
-		}
-		.wrapper .body .main .item .price{
-			font-size: 14px;
-			display: block;
-			margin-top: 5px;
-		}
-	</style>
 	<div class="wrapper">
 		<div class="header"><h1>{{category.name}}</h1></div>
 		<div class="body">

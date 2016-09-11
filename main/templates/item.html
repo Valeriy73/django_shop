@@ -1,48 +1,12 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>Catalog</title>
+	<link rel="stylesheet" href="{% static "style.css" %}" type="text/css">
 </head>
 <body>
-	<style>
-		.wrapper{
-			width: 1000px;
-			margin: 0 auto;
-
-		}
-		.wrapper .header{
-			width: 100%;
-			height: 40px;
-			background: #eee;
-		}
-		.wrapper .body{
-			width: 100%;
-			min-height: 600px;
-			background: #ccc;
-		}
-		.wrapper .body .item{
-			width: 600px;
-			min-height: 300px;
-			margin: 0 auto;
-			background: #eee;
-		}
-		.wrapper .body .item .price{
-			margin-top: 5px;
-			display: block;
-			font-size: 14px;
-			color: #000;
-		}
-		.wrapper .body .item .buy{
-			display: block;
-			font-size: 14px;
-			color: #000;
-		}
-		.wrapper .body .item .full{
-			max-width: 600px;
-			height: auto;
-		}
-	</style>
 	<div class="wrapper">
 		<div class="header"><h1>{{tovar.name}}</h1></div>
 		<div class="body">
