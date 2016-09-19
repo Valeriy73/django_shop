@@ -86,3 +86,42 @@
 		.wrapper .body ul{
 			font-size: 14px;
 		}
+		.cart{
+			background: #e5e5e5;
+			font-size: 14px;
+			border: 1px solid #000;
+			position: fixed;
+			top: 50%;
+			right: 0;
+			width: 170px;
+		}
+		.cart .oformit, .cart .summa{
+			display: block;
+			margin: 0 auto;
+		}
+		.cart .oformit{
+			width: 150px;
+		}
+		.cart .summa{
+			width: 20px;
+		}
+		.cart .summa:after{
+			content: 'грн';
+			margin-left: 5px;
+		}
+		.korzina .row{
+			display: block;
+			width: 100%;
+			margin-bottom: 10px;
+		}
+		.korzina .row img, .korzina .row .name, .korzina .row .price{
+			display: inline-block;
+			vertical-align: middle;
+			width: 30%;
+			font-size: 14px;
+		}
+		.korzina .row img{
+			max-height: 100px;
+			width: auto;
+			margin-right: 30px;
+		}

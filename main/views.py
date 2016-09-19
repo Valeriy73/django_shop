@@ -14,6 +14,11 @@ def home(request):
 	}
 	return HttpResponse(render_to_string('home.html', context))
 
+def order(request):
+	
+	context= {}
+	return HttpResponse(render_to_string('order.html', context))
+
 def item(request, alias):
 	try:
 		tovar = Item.objects.get(alias=alias)

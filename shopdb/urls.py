@@ -22,5 +22,6 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'main.views.home'),
     url(r'^item/(?P<alias>[^/]+)', 'main.views.item'),
+    url(r'^order/', 'main.views.order'),
     url(r'^(?P<alias>[^/]+)', 'main.views.get_category'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
